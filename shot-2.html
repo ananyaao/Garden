@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Shot 2</title>
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="container">
+
+    <p class="text" style="--x:81px; --y:107px; --w:978px; --s:32px;">
+      Albert rose from his seat…
+    </p>
+
+    <p class="text" style="--x:81px; --y:264px; --w:978px; --s:32px;">
+      I had the revolver ready. I fired with the utmost care:
+    </p>
+
+    <button class="choice box" id="shotBtn" style="--x:81px; --y:476px;" aria-label="Fire">
+      ...
+    </button>
+
+    <div id="afterShot" class="hidden">
+      <p class="text" style="--x:70px; --y:687px; --w:978px; --s:30px;">
+        Albert fell without a murmur, at once.
+      </p>
+
+      <p class="text" style="--x:70px; --y:814px; --w:978px; --s:28px;">
+        I swear that his death was instantaneous, as if he had been struck by lightning.
+      </p>
+
+      <a class="choice1" href="#">Why?</a>
+      <a class="choice2" href="enemy-2.html">In another world he lives</a>
+      <a class="choice3" href="call-2.html">Begin again</a>
+    </div>
+
+    <audio id="gunshot" preload="auto">
+      <source src="gunshot.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+</div>
+</body>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #cafb7e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.wrapper { width: 100%; display: flex; justify-content: center; }
+
+.container {
+  width: 1512px;
+  height: 982px;
+  position: relative;
+  background: #cafb7e;
+}
+
+.text {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  font-size: var(--s);
+  color: #000;
+  line-height: 1.25;
+}
+
+.hidden { display: none; }
+
+.choice {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  cursor: pointer;
+}
+
+.box {
+  width: 84px;
+  height: 48px;
+  background: #66023c;
+  border: 1px solid #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #cafb7e;
+}
+
+.box:hover { opacity: 0.9; }
+.box:active { transform: translateY(1px); }
+
+.box.fired {
+  opacity: 0.7;
+}
+
+.link {
+  font-size: 24px;
+  color: #0c00e7;
+  text-decoration: underline;
+}
+
+ .choice1, .choice2, .choice3 {
+    position: absolute;
+    font-size: 24px;
+    color: #0c00e7;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .choice1 {
+    top: 901px;
+    left: 81px;
+    width: 432px;
+    height: 28px;
+  }
+
+    .choice2 {
+    top: 901px;
+    left: 690px;
+    width: 131px;
+    height: 28px;
+  }
+
+  .choice3 {
+    top: 901px;
+    left: 1182px;
+    width: 355px;
+    height: 28px;
+  }
+
+
+
+.link:hover { opacity: 0.8; }
+
+</style>
+
+<script>
+const btn = document.getElementById("shotBtn");
+const afterShot = document.getElementById("afterShot");
+const gunshot = document.getElementById("gunshot");
+
+btn.addEventListener("click", () => {
+  btn.disabled = true;
+
+  gunshot.currentTime = 0;
+
+  gunshot.onended = () => {
+    afterShot.classList.remove("hidden");
+    btn.classList.add("fired");
+  };
+
+  gunshot.play().catch(() => {
+    afterShot.classList.remove("hidden");
+    btn.classList.add("fired");
+  });
+});
+</script>
+
+
+</html>

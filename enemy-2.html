@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Enemy 2</title>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <div class="container">
+
+    <p class="text text1">
+      You come to this house; but in other possible pasts you are my enemy; in others my friend.
+    </p>
+
+    <p class="text text2">
+      Fang, let us say, has a secret. A stranger knocks at his door. Fang makes up his mind to kill him. Naturally there are various possible outcomes.
+    </p>
+
+    <div id="b1" class="box box1" style="display:none;"><p>Fang can kill the intruder</p></div>
+    <div id="b2" class="box box2" style="display:none;"><p>The intruder can kill Fang</p></div>
+    <div id="b3" class="box box3" style="display:none;"><p>both can be saved</p></div>
+    <div id="b4" class="box box4" style="display:none;"><p>both can die</p></div>
+
+    <div id="after" style="display:none;">
+      <p class="text text4">and so on and so on.</p>
+      <p class="text text5">In Ts'ui Pen's work, all the possible solutions occur, each one being the point of departure for other bifurcations.</p>
+      <p class="text text6">Sometimes the pathways of this labyrinth converge.</p>
+
+      <a href="stephen-albert-2.html" class="choice choice1">Return to Stephen Albert</a>
+      <a href="train-2.html" class="choice choice2">Back to the train</a>
+      <a href="shot-2.html" class="choice choice3">Fire</a>
+    </div>
+
+  </div>
+</div>
+<audio id="knock" preload="auto">
+  <source src="knock.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let step = 0;
+const order = ["b1","b2","b3","b4","after"];
+const knock = document.getElementById("knock");
+
+function showNext() {
+  if (step >= order.length) return;
+
+  const id = order[step];
+  const el = document.getElementById(id);
+
+  if (id === "after") el.style.display = "block";
+  else el.style.display = "flex";
+
+  step++;
+}
+
+function playThen(fn) {
+  knock.currentTime = 0;
+  knock.onended = fn;
+  knock.play().catch(() => fn());
+}
+
+document.addEventListener("click", (e) => {
+  if (e.target.closest("a")) return;
+  if (step >= order.length) return;
+
+  if (step === 0) playThen(showNext);
+  else showNext();
+}, true);
+</script>
+
+
+
+</body>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #cafb7e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.wrapper { width: 100%; display: flex; justify-content: center; }
+
+.container {
+  width: 1512px;
+  height: 982px;
+  position: relative;
+  background: #cafb7e;
+}
+
+.text { position: absolute; font-size: 24px; color: #000; }
+
+.text1 { left: 261px; top: 167px; width: 978px; }
+.text2 { left: 249px; top: 250px; width: 1002px; }
+.text4 { left: 628px; top: 626px; }
+.text5 { left: 159px; top: 678px; width: 1200px; }
+.text6 { left: 463px; top: 746px; }
+
+.box {
+  position: absolute;
+  background: #66023c;
+  border: 1px solid #000;
+  width: 214px;
+  height: 193px;
+  align-items: center;
+  justify-content: center;
+}
+
+.box p {
+  font-size: 24px;
+  color: #cafb7e;
+  text-align: center;
+  padding: 20px;
+}
+
+.box1 { left: 210px; top: 379px; }
+.box2 { left: 485px; top: 379px; }
+.box3 { left: 760px; top: 379px; }
+.box4 { left: 1035px; top: 379px; }
+
+.choice {
+  position: absolute;
+  font-size: 24px;
+  color: #0c00e7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.choice1 { left: 161px; top: 841px; }
+.choice2 { left: 726px; top: 847px; }
+.choice3 { left: 1298px; top: 841px; }
+
+.choice:hover { opacity: 0.8; }
+</style>
+
+</html>

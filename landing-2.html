@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="title">
+      <span class="w1">The</span>
+      <span class="w2">garden</span>
+      <span class="w3">of</span>
+      <span class="w4">forking</span>
+      <span class="w5">Paths</span>
+    </div>
+
+    <div class="menu">
+      <select id="nav" aria-label="Navigate">
+        <option value="" selected>navigate…</option>
+        <option value="call-2.html">The Call</option>
+        <option value="train-2.html">The Train</option>
+        <option value="labyrinth-2.html">The Labyrinth</option>
+        <option value="stephen-albert-2.html">The Stephen Albert</option>
+        <option value="enemy-2.html">The Enemy</option>
+        <option value="shot-2.html">The Shot</option>
+        <option value="name.html">The Name</option>
+      </select>
+    </div>
+
+  </div>
+
+  <script>
+    const nav = document.getElementById("nav");
+    nav.addEventListener("change", () => {
+      if (nav.value) window.location.href = nav.value;
+    });
+  </script>
+</body>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #cafb7e;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 1512px;
+    height: 982px;
+    position: relative;
+    background: #cafb7e;
+  }
+
+  .title span {
+    position: absolute;
+    font-family: 'AquilineTwo', serif;
+    font-size: 180px;
+    color: #66023c;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .w1 { left: 50px;  top: 50px; }
+  .w2 { left: 300px; top: 150px; }
+  .w3 { left: 700px; top: 250px; }
+  .w4 { left: 900px; top: 350px; }
+  .w5 { left: 950px; top: 550px; }
+
+
+  .menu {
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+  }
+
+  select {
+    font: 14px Helvetica, Arial, sans-serif;
+    padding: 6px 28px 6px 10px;
+    border: 1px solid #000;
+    background: #f2f2f2;
+    color: #000;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .menu::after{
+    content: "▾";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font: 14px Helvetica, Arial, sans-serif;
+    color: #000;
+  }
+
+</style>
+</html>

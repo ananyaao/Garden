@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Labyrinth 2</title>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <div class="container">
+
+    <div class="line" style="left:-200px; top:380px; transform: translate(-50%, -50%) rotate(-16deg);"></div>
+    <div class="line" style="left:640px;  top:930px; transform: translate(-50%, -50%) rotate(-62deg);"></div>
+    <div class="line" style="left:520px;  top:980px; transform: translate(-50%, -50%) rotate(-14deg);"></div>
+
+    <p class="text" style="left:80px; top:150px; width:900px; transform: rotate(-16deg);">
+      The advice about turning always to the left reminded me that such was the common formula for finding the central courtyard of certain labyrinths. I know something about labyrinths. Not for nothing am I the great-grandson of Ts'ui Pen…
+    </p>
+
+    <p class="text" style="left:700px; top:360px; width:260px; transform: rotate(-62deg);">
+      He spent thirteen years on these oddly assorted tasks before he was assassinated by a stranger.
+    </p>
+
+    <p class="text" style="left:760px; top:740px; width:900px; transform: rotate(-14deg);">
+      I imagined a maze of mazes, of a sinuous, ever growing maze which would take in both past and future and would somehow involve the stars.
+    </p>
+
+    <a class="choice" href="stephen-albert-2.html" style="left:40px; top:400px; transform: rotate(-16deg);">
+      Meet Stephen Albert
+    </a>
+
+    <a class="choice" href="enemy-2.html" style="left:780px; top:880px; transform: rotate(-14deg);">
+      Another version
+    </a>
+
+    <a class="choice" href="call-2.html" style="left:1200px; top:90px; transform: rotate(-62deg);">
+      Return to danger
+    </a>
+
+  </div>
+</div>
+
+</body>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #cafb7e;
+  padding: 220px 40px 260px;
+}
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1512px;
+  height: 982px;
+  position: relative;
+  background: #cafb7e;
+  overflow: visible;
+}
+
+.line {
+  position: absolute;
+  width: 200vmax;
+  height: 2px;
+  background: #66023c;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.text {
+  position: absolute;
+  font-size: 24px;
+  color: #000;
+  line-height: 1.2;
+  text-align: center;
+  transform-origin: left top;
+}
+
+.choice {
+  position: absolute;
+  font-size: 24px;
+  color: #0c00e7;
+  text-decoration: underline;
+  cursor: pointer;
+  transform-origin: left top;
+}
+
+.choice:hover { opacity: 0.8; }
+</style>
+
+</html>

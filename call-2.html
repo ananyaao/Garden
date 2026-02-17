@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Call 2</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="highlight-box"></div>
+
+      <div class="text1">
+        <p>…and I hung up the phone. Immediately I recollected the voice that had spoken in German.</p>
+      </div>
+
+      <p class="text2">
+        It was that of <span class="highlighted-text">Captain Richard Madden.</span>
+      </p>
+
+      <p class="text3">
+        Madden, in Viktor Runeberg's office, meant the end of all our work and - though this seemed a secondary matter, or should have seemed so to me - of our lives also. Before the sun set on this same day, I ran the same risk.
+      </p>
+
+      <div class="text4">
+        <p>I went up to my bedroom. Absurd though the gesture was, I closed and locked the door. I threw myself down on my narrow iron bed, and waited on my back… It seemed incredible that this day, a day without warnings or omens,</p>
+        <p class="large">might be that of my <u>implacable death.</u></p>
+      </div>
+
+      <a class="choice1" href="train-2.html">Escape to the train</a>
+      <a class="choice2" href="labyrinth-2.html">Find the labyrinth</a>
+      <a class="choice3" href="#">Imagine</a>
+    </div>
+  </div>
+</body>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #cafb7e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    width: 1512px;
+    height: 982px;
+    position: relative;
+    background: #cafb7e;
+  }
+
+  .highlight-box {
+    position: absolute;
+    background: #66023c;
+    width: 276px;
+    height: 32px;
+    left: 389px;
+    top: 238px;
+  }
+
+  .text1, .text2, .text3, .text4 {
+    position: absolute;
+    font-size: 24px;
+    color: #000;
+    width: 430px;
+    left: 252px;
+  }
+
+  .text1 { top: 106px; width: 422px; }
+  .text2 { top: 240px; left: 249px; width: 416px; }
+  .text3 { top: 322px; left: 249px; width: 429px; }
+  .text4 { top: 547px; width: 431px; }
+
+  .highlighted-text { color: #cafb7e; }
+
+  .text4 .large {
+    font-size: 48px;
+    margin-top: 10px;
+  }
+
+  .choice1, .choice2, .choice3 {
+    position: absolute;
+    font-size: 24px;
+    color: #0c00e7;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .choice1 {
+    top: 779px;
+    left: 1142px;
+    width: 201px;
+    height: 28px;
+  }
+
+    .choice2 {
+    top: 820px;
+    left: 1158px;
+    width: 185px;
+    height: 28px;
+  }
+
+  .choice3 {
+    top: 861px;
+    left: 1257px;
+    width: 86px;
+    height: 28px;
+  }
+
+
+  .choice:hover { opacity: 0.8; }
+</style>
+</html>

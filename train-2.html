@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Train 2</title>
+</head>
+
+<body>
+<div class="wrapper">
+<div class="container">
+
+<p class="text" style="left:50px; top:250px; width:180px;">
+I was going to the village of Ashgrove…
+</p>
+
+<p class="text" style="left:310px; top:250px; width:240px;">
+The train would leave in a few minutes, at eight-fifty. I hurried…
+</p>
+
+<p class="text" style="left:660px; top:250px; width:310px;">
+There was almost no one on the platform… At last the train pulled out.
+</p>
+
+<p id="trigger" class="text" style="left:1050px; top:250px; width:250px;">
+A man I recognized ran furiously, but vainly, the length of the platform.
+</p>
+
+<div class="line"></div>
+
+<div id="afterTrain" class="hidden">
+
+  <p class="text" style="left:450px; top:360px; width:550px; font-size:35px;">
+    It was Captain Richard Madden.
+  </p>
+
+  <a class="choice" href="enemy-2.html" style="left:130px; bottom:100px;">
+    Decide he's my enemy
+  </a>
+
+  <a class="choice" href="stephen-albert-2.html" style="left:590px; bottom:100px;">
+    Find Stephen Albert
+  </a>
+
+  <a class="choice" href="call-2.html" style="right:180px; bottom:100px;">
+    Return to the call
+  </a>
+
+</div>
+
+</div>
+</div>
+
+<audio id="trainSound" preload="auto">
+  <source src="train.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const trigger = document.getElementById("trigger");
+const after = document.getElementById("afterTrain");
+const train = document.getElementById("trainSound");
+
+trigger.addEventListener("click", () => {
+  train.currentTime = 0;
+
+  train.onended = () => {
+    after.classList.remove("hidden");
+  };
+
+  train.play().catch(() => {
+    after.classList.remove("hidden");
+  });
+});
+</script>
+
+</body>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #66023c;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: #66023c;
+}
+
+.text {
+  position: absolute;
+  font-size: 20px;
+  color: #cafb7e;
+}
+
+.line {
+  position: absolute;
+  width: calc(100% - 100px);
+  height: 2px;
+  background: #cafb7e;
+  left: 50px;
+  top: 340px;
+}
+
+.choice {
+  position: absolute;
+  font-size: 22px;
+  color: #0c00e7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.choice:hover { opacity: 0.8; }
+.hidden { display: none; }
+
+#trigger { cursor: pointer; }
+</style>
+</html>
