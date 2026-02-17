@@ -121,5 +121,27 @@
 
 
   .choice:hover { opacity: 0.8; }
+
+  <script>
+const audio = new Audio("call.mp3");
+
+// hide everything initially
+document.body.style.opacity = "0";
+
+let started = false;
+
+document.addEventListener("click", () => {
+  if (started) return;
+  started = true;
+
+  audio.play();
+
+  setTimeout(() => {
+    document.body.style.transition = "opacity 1.5s ease";
+    document.body.style.opacity = "1";
+  }, 800);
+});
+</script>
+
 </style>
 </html>
