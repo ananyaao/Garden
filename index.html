@@ -32,6 +32,8 @@
 
   </div>
 
+  <p class="note">Note: click around on pages</p>
+
   <script>
     const nav = document.getElementById("nav");
     nav.addEventListener("change", () => {
@@ -102,6 +104,17 @@
     font: 14px Helvetica, Arial, sans-serif;
     color: #000;
   }
+
+  .note {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    opacity: 0.6;
+    font-family: serif;
+    letter-spacing: 0.08em;
+}
 
 </style>
 </html>
