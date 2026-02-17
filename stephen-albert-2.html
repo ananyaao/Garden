@@ -134,16 +134,6 @@ bg.play().catch(() => {
   document.addEventListener("keydown", startAudio);
 });
 
-(function () {
-  const original = EventTarget.prototype.addEventListener;
-
-  EventTarget.prototype.addEventListener = function(type, listener, options) {
-    if (type === "click" && this instanceof HTMLElement) {
-      this.style.cursor = "pointer";
-    }
-    return original.call(this, type, listener, options);
-  };
-})();
 
 </script>
 </body>
