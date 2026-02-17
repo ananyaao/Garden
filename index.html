@@ -114,25 +114,5 @@
     font-style: italic;
 }
 
-<script>
-const audio = new Audio("knock.mp3"); 
-
-// hide page at start
-document.body.style.opacity = "0";
-
-let started = false;
-
-document.addEventListener("click", () => {
-  if (started) return;
-  started = true;
-
-  audio.play();
-
-  setTimeout(() => {
-    document.body.style.transition = "opacity 1.5s ease";
-    document.body.style.opacity = "1";
-  }, 600);
-});
-</script> 
 </style>
 </html>
